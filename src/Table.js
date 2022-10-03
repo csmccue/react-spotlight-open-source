@@ -6,9 +6,11 @@ import 'rsuite-table/lib/less/index.less';
 
 export default function RTable() {
   const [users, setUsers] = useState(usersData);
-  console.log(users);
-
-
+  const ImageCell = ({ rowData, dataKey, ...rest }) => (
+    <Cell {...rest}>
+      <img src={rowData[dataKey]} width="50" />
+    </Cell>
+  );
 
   return (
     <>
@@ -16,7 +18,23 @@ export default function RTable() {
       <Table data={users}>
         <Column width={80} sortable fixed resizable>
           <HeaderCell>ID</HeaderCell>
-          <Cell dataKe="id" />
+          <Cell dataKey="id" />
+        </Column>
+        <Column width={80} sortable fixed resizable>
+          <HeaderCell>Email</HeaderCell>
+          <Cell dataKey="email" />
+        </Column>
+        <Column width={80} sortable fixed resizable>
+          <HeaderCell>First Name</HeaderCell>
+          <Cell dataKey="first_name" />
+        </Column>
+        <Column width={80} sortable fixed resizable>
+          <HeaderCell>Last Name</HeaderCell>
+          <Cell dataKey="last_name" />
+        </Column>
+        <Column width={80} resizable>
+          <HeaderCell>Image or something</HeaderCell>
+          <ImageCell dataKey="image" />
         </Column>
       </Table>
     </>
