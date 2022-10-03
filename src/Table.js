@@ -1,11 +1,10 @@
 import React from 'react';
-import { useState } from 'react';
 import usersData from './users.json';
 import { Table, Column, HeaderCell, Cell } from 'rsuite-table';
 import 'rsuite-table/dist/css/rsuite-table.css';
 
 export default function RTable() {
-  const [users, setUsers] = useState(usersData);
+  const users = usersData;
   const ImageCell = ({ rowData, dataKey, ...rest }) => (
     <Cell {...rest}>
       <img src={rowData[dataKey]} width="50" />
