@@ -17,23 +17,23 @@ export default function RTable() {
       <div>Table</div>
       <div className="table">
         <Table data={users}>
-          <Column width={80} resizable>
+          <Column width={80} sortable resizable>
             <HeaderCell>ID</HeaderCell>
             <Cell dataKey="id" />
           </Column>
-          <Column width={80} resizable>
+          <Column width={80} sortable resizable>
             <HeaderCell>Email</HeaderCell>
             <Cell dataKey="email" />
           </Column>
-          <Column width={80} resizable>
+          <Column width={80} sortable resizable>
             <HeaderCell>First Name</HeaderCell>
             <Cell dataKey="first_name" />
           </Column>
-          <Column width={80} resizable>
+          <Column width={80} sortable resizable>
             <HeaderCell>Last Name</HeaderCell>
             <Cell dataKey="last_name" />
           </Column>
-          <Column width={80} resizable>
+          <Column width={80} sortable resizable>
             <HeaderCell>Image or something</HeaderCell>
             <ImageCell dataKey="image" />
           </Column>
