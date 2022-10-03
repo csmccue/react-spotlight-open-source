@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import usersData from './users.json';
 import { Table, Column, HeaderCell, Cell } from 'rsuite-table';
-import 'rsuite-table/lib/less/index.less';
+import 'rsuite-table/dist/css/rsuite-table.css';
 
 export default function RTable() {
   const [users, setUsers] = useState(usersData);
@@ -15,28 +15,30 @@ export default function RTable() {
   return (
     <>
       <div>Table</div>
-      <Table data={users}>
-        <Column width={80} sortable fixed resizable>
-          <HeaderCell>ID</HeaderCell>
-          <Cell dataKey="id" />
-        </Column>
-        <Column width={80} sortable fixed resizable>
-          <HeaderCell>Email</HeaderCell>
-          <Cell dataKey="email" />
-        </Column>
-        <Column width={80} sortable fixed resizable>
-          <HeaderCell>First Name</HeaderCell>
-          <Cell dataKey="first_name" />
-        </Column>
-        <Column width={80} sortable fixed resizable>
-          <HeaderCell>Last Name</HeaderCell>
-          <Cell dataKey="last_name" />
-        </Column>
-        <Column width={80} resizable>
-          <HeaderCell>Image or something</HeaderCell>
-          <ImageCell dataKey="image" />
-        </Column>
-      </Table>
+      <div className="table">
+        <Table data={users}>
+          <Column width={80} resizable>
+            <HeaderCell>ID</HeaderCell>
+            <Cell dataKey="id" />
+          </Column>
+          <Column width={80} resizable>
+            <HeaderCell>Email</HeaderCell>
+            <Cell dataKey="email" />
+          </Column>
+          <Column width={80} resizable>
+            <HeaderCell>First Name</HeaderCell>
+            <Cell dataKey="first_name" />
+          </Column>
+          <Column width={80} resizable>
+            <HeaderCell>Last Name</HeaderCell>
+            <Cell dataKey="last_name" />
+          </Column>
+          <Column width={80} resizable>
+            <HeaderCell>Image or something</HeaderCell>
+            <ImageCell dataKey="image" />
+          </Column>
+        </Table>
+      </div>
     </>
   );
 }
