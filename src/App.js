@@ -1,15 +1,16 @@
 import { Link, Route, Switch } from 'react-router-dom';
+import Table from './components/Table.js';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <nav>
-        <Link to="/table">Table</Link>
+        <Link to="/table" component={Table}>Table</Link>
         <Link to="/charts">Charts</Link>
       </nav>
       <Switch>
-        <Route path="/table">
+        <Route exact path="/table">
           <h1>Table Libary</h1>
         </Route>
         <Route path="/charts">
