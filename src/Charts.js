@@ -28,7 +28,7 @@ export const data = {
 export default function Charts() {
   return (
     <>
-      <div>Charts</div>
+      <div>Colors of the American Flag</div>
       <Pie data={data} />
     </>
 
