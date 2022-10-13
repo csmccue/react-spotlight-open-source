@@ -4,6 +4,7 @@ import { Table, Column, HeaderCell, Cell } from 'rsuite-table';
 import 'rsuite-table/dist/css/rsuite-table.css';
 
 export default function RTable() {
+  
   const users = usersData;
   const ImageCell = ({ rowData, dataKey, ...rest }) => (
     <Cell {...rest}>
@@ -12,6 +13,7 @@ export default function RTable() {
   );
 
   return (
+    
     <>
       <div>Table</div>
       <div className="table">
